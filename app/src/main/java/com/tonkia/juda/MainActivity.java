@@ -3,6 +3,7 @@ package com.tonkia.juda;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -85,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getFragmentManager();
         from = fragmentManager.findFragmentById(R.id.fragment_content);
         homeF = (HomeFragment) from;
+    }
+
+    public void startChatting(View view) {
+        Intent i = new Intent(this, ChatActivity.class);
+        startActivity(i);
+
     }
 
 }
