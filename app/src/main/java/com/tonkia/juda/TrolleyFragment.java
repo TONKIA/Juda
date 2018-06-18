@@ -5,9 +5,11 @@ import android.os.Bundle;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -101,6 +103,14 @@ public class TrolleyFragment extends Fragment {
             public MyViewHolder(View itemView) {
                 super(itemView);
                 rb = itemView.findViewById(R.id.radio_btn);
+                //RadioButton有问题
+
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        rb.setChecked(!rb.isChecked());
+                    }
+                });
                 iv = itemView.findViewById(R.id.img_view);
                 tv_name = itemView.findViewById(R.id.tv_name);
                 tv_price = itemView.findViewById(R.id.tv_price);
