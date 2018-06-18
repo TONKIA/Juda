@@ -48,7 +48,7 @@ public class SelectedFragment extends Fragment implements SwipeRefreshLayout.OnR
         View root = inflater.inflate(R.layout.fragment_selected, container, false);
         //        用NestedScrollView替换ScrollView
         NestedScrollView nsv = root.findViewById(R.id.nested_scroll_view);
-        nsv.setNestedScrollingEnabled(false);
+        //nsv.setNestedScrollingEnabled(false);
 
 
         //        String title = getArguments().getString("title");
@@ -74,6 +74,8 @@ public class SelectedFragment extends Fragment implements SwipeRefreshLayout.OnR
         rv.setFocusable(false);
         rv.setLayoutManager(new GridLayoutManager(mContext, 2));
         rv.setAdapter(new MyRecycleAdapter(list));
+        rv.setNestedScrollingEnabled(false);
+
 
         srl = root.findViewById(R.id.swipe_refresh);
         srl.setOnRefreshListener(this);
